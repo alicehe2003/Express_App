@@ -18,3 +18,11 @@ After POST request, redirect user to root path - this prevents duplicate submiss
 The usersStorage class simulates interactions with a database. 
 
 Run with `node --watch app.js`. 
+
+# Workflow 
+
+From Odin Project. 
+
+![Form handling workflow](./web_server_form_handling.png)
+
+
