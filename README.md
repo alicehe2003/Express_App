@@ -14,3 +14,5 @@ Odin Project: Express app demo
 `res`: the response object, which is used to send back a response to the client 
 
 After POST request, redirect user to root path - this prevents duplicate submissions and refreshes the user list. 
+
+The usersStorage class simulates interactions with a database. 
