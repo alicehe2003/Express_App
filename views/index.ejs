@@ -9,7 +9,7 @@
     <h1><%= title %></h1>
 
     <ul>
-        <% if (locals.users) %>
+        <% if (locals.users) { %>
             <% users.forEach(user => { %>
                 <li>
                     ID: <%= user.id %>, Name: <%= user.firstName %> <%= user.lastName %>

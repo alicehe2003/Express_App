@@ -25,7 +25,7 @@ class UserStorage {
     }
 
     deleteUser(id) {
-        delete this.storage[id]; 
+        delete this.storage[id]; g
     }
 }
 
