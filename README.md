@@ -7,4 +7,4 @@ Odin Project: Express app demo
 
 # Notes 
 
-`express.urlencoded()` is a middleware used to parse incoming request bodies that contain URL-encoded data, which is typically submitted through HTML forms. It ensure that the data in the body of a POST request is properly parsed and made available on `req.body` as a JavaScript object. 
+`express.urlencoded()` is a middleware used to parse incoming request bodies that contain URL-encoded data, which is typically submitted through HTML forms. It ensure that the data in the body of a POST request is properly parsed and made available on `req.body` as a JavaScript object. Most simple forms will use `Content-Type: application/x-www-form-url-encoded` HTTP header when sending data to server, if `Content-Type` does not match this form, server will show data as an empty object `{}`, 
