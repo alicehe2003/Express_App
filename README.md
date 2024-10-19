@@ -16,3 +16,5 @@ Odin Project: Express app demo
 After POST request, redirect user to root path - this prevents duplicate submissions and refreshes the user list. 
 
 The usersStorage class simulates interactions with a database. 
+
+Run with `node --watch app.js`. 

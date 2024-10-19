@@ -36,3 +36,39 @@ exports.usersCreatePost = (req, res) => {
     usersStorage.addUser({ firstName, lastName }); 
     res.redirect("/"); 
 }
+
+// for validation 
+
+const { body, validationAResult, validationResult } = require("express-validator"); 
+
+const alphaErr = "must only contain letters."; 
+const lengthErr = "must be between 1 and 10 characters."; 
+
+const validateUser = [
+    body("firstName").trim()
+        .isAlpha().withMessage(`First name ${alphaErr}`)
+        .isLength({ min: 1, max: 10 }).withMessage(`First name ${lengthErr}`), 
+    body("lastName").trim()
+        .isAlpha().withMessage(`Last name ${alphaErr}`)
+        .isLength({ min: 1, max: 10 }).withMessage(`Last name ${lengthErr}`), 
+]; 
+
+// pass array of middleware validations to controller 
+exports.usersCreatePost = [
+    validateUser, 
+    (req, res) => {
+        const errors = validationResult(req); 
+        if (!errors.isEmpty()) {
+            return res.status(400).render("createUser", {
+                title: "Create user", 
+                errors: errors.array(), 
+            }); 
+        }
+        const { firstName, lastName } = req.body; 
+        usersStorage.addUser({ firstName, lastName }); 
+        res.redirect("/"); 
+    }
+]; 
+
+
+
